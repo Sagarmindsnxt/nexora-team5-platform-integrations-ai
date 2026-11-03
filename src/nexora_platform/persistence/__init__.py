@@ -1,0 +1,1 @@
+﻿"""Nexora shared persistence infrastructure."""

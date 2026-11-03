@@ -1,0 +1,1 @@
+﻿"""Nexora shared foundation settings."""
