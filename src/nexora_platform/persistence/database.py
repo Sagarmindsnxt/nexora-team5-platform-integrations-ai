@@ -12,8 +12,11 @@ from nexora_platform.foundation.config import get_settings
 @lru_cache(maxsize=1)
 def get_engine() -> Engine:
     """Create one process-wide engine using the configured database URL."""
+    database_url = get_settings().database_url
+    if not database_url:
+        raise RuntimeError("Database configuration is missing")
     return create_engine(
-        get_settings().database_url,
+        database_url,
         pool_pre_ping=True,
     )
 
